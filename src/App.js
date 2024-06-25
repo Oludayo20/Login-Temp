@@ -10,8 +10,8 @@ function App() {
     <>
       <ToastContainer position="top-center" />
       <Routes>
-        <Route path="/" element={<NewUserForm />}></Route>
-        <Route path="dash" element={<DashLayout />}></Route>
+        <Route path="/dash" element={<NewUserForm />}></Route>
+        <Route path="/" element={<DashLayout />}></Route>
       </Routes>
     </>
   );

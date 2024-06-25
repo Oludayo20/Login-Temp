@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useAddNewUserMutation } from './usersApiSlice';
+import { useDispatch, useSelector } from 'react-redux';
+// import { useAddNewUserMutation } from './usersApiSlice';
 import { useNavigate } from 'react-router-dom';
 import { ROLES } from '../../config/roles';
 import { toast } from 'react-toastify';
@@ -8,9 +9,11 @@ const USER_REGEX = /^[A-z]{3,20}$/;
 const PWD_REGEX = /^[A-z0-9!@#$%]{4,12}$/;
 
 const NewUserForm = () => {
-  const [addNewUser, { isLoading, isSuccess, isError, error }] =
-    useAddNewUserMutation();
+  // const [addNewUser, { isLoading, isSuccess, isError, error }] =
+  //   useAddNewUserMutation();
 
+  const { message } = useSelector((state) => state.message);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [username, setUsername] = useState('');
